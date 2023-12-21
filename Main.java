@@ -1,14 +1,21 @@
 class Main {
     public static void main(String[] args) {
-        int [] score = new int[3];
-        score[0] = 80;
-        score[1] = 100;
-        score[2] = 74;
-        String[] name ={"田中", "佐藤", "鈴木"};
+        int[][] allScore = new int[2][3];
+        allScore[0][0] = 80;
+        allScore[0][1] = 100;
+        allScore[0][2] = 70;
+        allScore[1][0] = 85;
+        allScore[1][1] = 95;
+        allScore[1][2] = 80;
 
-        System.out.println(name[0] + "さん：" + score[0] + "点");
-        System.out.println(name[1] + "さん：" + score[1] + "点");
-        System.out.println(name[2] + "さん：" + score[2] + "点");
-        System.out.println("受験者数：" + score.length + "名");
+        System.out.println(allScore[0][0] + "点");
+        System.out.println(allScore[0][1] + "点");
+        System.out.println(allScore[0][2] + "点");
+        System.out.println(allScore[1][0] + "点");
+        System.out.println(allScore[1][1] + "点");
+        System.out.println(allScore[1][2] + "点");
+
+        System.out.println("allScore.length：" + allScore.length);
+        System.out.println("allScore[0].length：" + allScore[0].length);
     }
 }
