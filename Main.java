@@ -1,15 +1,14 @@
 class Main {
     public static void main(String[] args) {
-        int month = 12;
-        int day = 29;
-        float weight = 63.0f; //floatはfを忘れてはならない
-        double height = 168.5;
-        char bloodType = 'A';
-        String name = "田中";
+        int [] score = new int[3];
+        score[0] = 80;
+        score[1] = 100;
+        score[2] = 74;
+        String[] name ={"田中", "佐藤", "鈴木"};
 
-        System.out.println("こんにちは！" + name + "です");
-        System.out.println("身長は" + height + "cm、体重は" + weight + "kg、");
-        System.out.println("誕生日は" + month + "月" + day + "日、");
-        System.out.println("血液型は" + bloodType + "型です");
+        System.out.println(name[0] + "さん：" + score[0] + "点");
+        System.out.println(name[1] + "さん：" + score[1] + "点");
+        System.out.println(name[2] + "さん：" + score[2] + "点");
+        System.out.println("受験者数：" + score.length + "名");
     }
 }
