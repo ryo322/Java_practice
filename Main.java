@@ -1,15 +1,10 @@
 class Main {
    public static void main(String[] args){
-     int a = Integer.parseInt(args[0]);
-     int b = Integer.parseInt(args[1]);
+    int price = Integer.parseInt(args[0]);
+    double rate = 0.08;
+    int amount;
 
-     System.out.println("a=" + a + ", b=" + b);
-     System.out.println("a+b=" + (a + b));
-     System.out.println("a-b=" + (a - b));
-     System.out.println("a*b=" + (a * b));
-     System.out.println("a/b=" + (a / b));
-     System.out.println("a%b=" + (a % b));
-     System.out.println("a >= 0:" + (a >= 0));
-     System.out.println("(a >= 0) && (b >= 0):" + ((a >= 0) && (b >= 0)));
+    amount = (int)(price * (1 + rate));
+    System.out.println("税込金額:" + amount + "円");
    }
 }
