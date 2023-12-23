@@ -1,15 +1,14 @@
 class Main {
    public static void main(String[] args){
-    int radius = Integer.parseInt(args[0]);
-    double pi = 3.141592;
-    double area;
+    int a = Integer.parseInt(args[0]);
+    int b = Integer.parseInt(args[1]);
 
-    area = radius * radius * pi;
-
-    area = (int)(area * 100); //小数点第3位以降を切り捨て
-    area = area / 100; //小数点を/100で戻す
-
-    System.out.println("半径：" + radius);
-    System.out.println("面積：" + area);
+    if ( a > b){
+      System.out.println("大きいのは" + a + "です");
+    } else if( b > a) {
+      System.out.println("大きいのは" + b + "です");
+    } else {
+      System.out.println("同じです");
+    }
   }
 }
