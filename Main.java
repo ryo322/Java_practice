@@ -1,19 +1,18 @@
 class Main {
    public static void main(String[] args){
-    int price = Integer.parseInt(args[0]);
-    double rate = 0.10;
-    int discount, amount;
-
-   if(price >= 5000){
-    discount = 500;
-   } else if(price >= 3000){
-    discount = 300;
-   } else {
-    discount = 0;
-   }
-
-    amount = (int)((price - discount) * (1 + rate));  
-    System.out.println("値引き金額:" + discount + "円");
-    System.out.println("税込金額:" + amount + "円");
+    int num = Integer.parseInt(args[0]);
+    switch (num){
+      case 1: //セミコロンではなくコロン
+       System.out.println("入園料金8400円");
+       break;  //break;で処理を抜ける
+      case 2:
+       System.out.println("入園料金7000円");
+       break;
+      case 3:
+       System.out.println("入園料金5000円");
+       break;
+      default: //if文におけるelseのようなもの
+      System.out.println("１：一般、２：中・高校生、３：小学生・幼児");
+    }
    }
 }
