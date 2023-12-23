@@ -1,9 +1,7 @@
 class Main {
    public static void main(String[] args){
-    int i = 1;
-    while(i <= 10){
-      System.out.println(i + "回目：文章");
-      i++;
+    for(int i = 0; i < args.length; i++){ //宣言したiは宣言したブロック内でしか使えない
+      System.out.println(args[i]);
     }
   }
 }
