@@ -1,10 +1,17 @@
 class Main {
    public static void main(String[] args){
     int price = Integer.parseInt(args[0]);
-    double rate = 0.08;
-    int amount;
+    double rate = 0.10;
+    int discount, amount;
 
-    amount = (int)(price * (1 + rate));  //(int)などのキャスト演算子をつけないとコンパイルエラーとなる。
+   if(price >= 3000){
+    discount = 300;
+   } else {
+    discount = 0;
+   }
+
+    amount = (int)((price - discount) * (1 + rate));  
+    System.out.println("値引き金額:" + discount + "円");
     System.out.println("税込金額:" + amount + "円");
    }
 }
