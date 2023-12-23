@@ -1,14 +1,9 @@
 class Main {
    public static void main(String[] args){
-    int a = Integer.parseInt(args[0]);
-    int b = Integer.parseInt(args[1]);
-
-    if ( a > b){
-      System.out.println("大きいのは" + a + "です");
-    } else if( b > a) {
-      System.out.println("大きいのは" + b + "です");
-    } else {
-      System.out.println("同じです");
+    int i = 1;
+    while(i <= 10){
+      System.out.println(i + "回目：文章");
+      i++;
     }
   }
 }
