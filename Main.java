@@ -4,7 +4,9 @@ class Main {
     double rate = 0.10;
     int discount, amount;
 
-   if(price >= 3000){
+   if(price >= 5000){
+    discount = 500;
+   } else if(price >= 3000){
     discount = 300;
    } else {
     discount = 0;
