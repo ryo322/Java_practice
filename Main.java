@@ -1,15 +1,15 @@
 class Main {
    public static void main(String[] args){
-     int[] data = new int[4];
+     int a = Integer.parseInt(args[0]);
+     int b = Integer.parseInt(args[1]);
 
-     data[0] = 90;
-     data[1] = 80;
-     data[2] = 100;
-     data[3] = 90;
-
-     System.out.println("１人目は" + data[0] + "点");
-     System.out.println("２人目は" + data[1] + "点");
-     System.out.println("３人目は" + data[2] + "点");
-     System.out.println("４人目は" + data[3] + "点");
+     System.out.println("a=" + a + ", b=" + b);
+     System.out.println("a+b=" + (a + b));
+     System.out.println("a-b=" + (a - b));
+     System.out.println("a*b=" + (a * b));
+     System.out.println("a/b=" + (a / b));
+     System.out.println("a%b=" + (a % b));
+     System.out.println("a >= 0:" + (a >= 0));
+     System.out.println("(a >= 0) && (b >= 0):" + ((a >= 0) && (b >= 0)));
    }
 }
