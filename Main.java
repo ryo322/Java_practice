@@ -1,13 +1,15 @@
 class Main {
    public static void main(String[] args){
-    int height = Integer.parseInt(args[0]);
-    int width = Integer.parseInt(args[1]);
-    int area;
+    int radius = Integer.parseInt(args[0]);
+    double pi = 3.141592;
+    double area;
 
-    area = height * width / 2;　//2.0とすればdouble型となり面積も小数で表示できる（int areaをdouble areaに変える)
+    area = radius * radius * pi;
 
-    System.out.println("高さ：" + height);
-    System.out.println("幅：" + width);
+    area = (int)(area * 100); //小数点第3位以降を切り捨て
+    area = area / 100; //小数点を/100で戻す
+
+    System.out.println("半径：" + radius);
     System.out.println("面積：" + area);
   }
 }
