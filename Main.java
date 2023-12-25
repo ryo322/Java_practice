@@ -19,5 +19,15 @@ class Student {
     double avg = (engScore + mathScore) / 2.0; //2だとint型になるので2.0にする
     return avg; //戻り値を返す場合はreturnを記述
   }
- 
+}
+
+class Stusample {
+  public static void main(String[] args){
+    Student stu1 = new Student();
+     stu1.name = "田中";
+     stu1.setScore(90, 80);
+
+     stu1.display();
+     System.out.println("平均" + stu1.getAvg() + "点");
+  }
 }
