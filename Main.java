@@ -1,39 +1,29 @@
-class Student3 {
+class Student4 {
   String name;
-  int engScore;
-  int mathScore;
+  static int counter = 0;
 
-  Student3(String n){
+  Student4(String n){
     name = n;
+    counter++;
+    System.out.println(name + "さんをインスタンス化しました");
   }
 
-  Student3(String n, int e, int m) { 
-    name = n;
-    engScore = e;
-    mathScore = m;
-  }
-
-  void setScore(int e, int m){
-    engScore = e;
-    mathScore = m;
-  }
-
-  void display(){
-    System.out.println(name + "さん");
-    System.out.println("英語" + engScore + "点・数学" + mathScore + "点");
+  static void display(){
+    System.out.println(counter + "人です");
   }
 }
 
-class StuSample3 {
+class StuSample4 {
   public static void main(String[] args){
-    Student3 stu1 = new Student3("田中");
-    Student3 stu2 = new Student3("佐藤", 75, 100);
-     stu1.setScore(90, 80);
-     stu1.display();
-     stu2.display();
+    Student4.display();
+
+    Student4 stu1 = new Student4("田中");
+    Student4.display();
+    Student4 stu2 = new Student4("佐藤");
+    Student4.display();
   }
 }
 
-//オブジェクトの初期化のために使われる特殊なメソッドをコンストラクタと呼ぶ
-//名前はクラス名と同じ、戻り値を持たない、new クラス名（コンストラクタへの引数）で定義
-//コンストラクタを定義していない場合は、自動でデフォルトコンストラクタ（引数・処理なし）が生成
+//作ったインスタンスの個数を知るにはインスタンス内の変数では不可能
+//全インスタンスが共通して使える変数が必要→staticを指定する
+//オブジェクトを生成していなくても使える→クラス名.変数[メソッド]名と記述
