@@ -1,33 +1,32 @@
-class Student {
-  //メンバ変数（属性）
-  String name;
-  int engScore;
-  int mathScore;
+class Car {
+  int no;
+  int speed;
 
-  //メソッド（操作）
-  void display() { //戻り値を返さない場合は戻り値の型にvoidを記述
-    System.out.println(name + "さん");
-    System.out.println("英語" + engScore + "点・数学" + mathScore + "点");
+  void setNo(int n){
+    no = n;
   }
 
-  void setScore(int eng, int math){
-    engScore = eng;
-    mathScore = math;
+  void run(int s) { 
+    speed = s;
   }
 
-  double getAvg(){
-    double avg = (engScore + mathScore) / 2.0; //2だとint型になるので2.0にする
-    return avg; //戻り値を返す場合はreturnを記述
+  void stop(){
+    speed = 0;
+  }
+
+  void display(){
+    System.out.println("ナンバー" + no + "の速度は" + speed + "です");
   }
 }
 
-class Stusample {
+class Drivecar {
   public static void main(String[] args){
-    Student stu1 = new Student();
-     stu1.name = "田中";
-     stu1.setScore(90, 80);
+    Car c1 = new Car();
+     c1.setNo(2525);
+     c1.run(30);
+     c1.display();
 
-     stu1.display();
-     System.out.println("平均" + stu1.getAvg() + "点");
+     c1.stop();
+     c1.display();
   }
 }
