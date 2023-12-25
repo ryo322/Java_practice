@@ -1,29 +1,37 @@
-class Student4 {
-  String name;
-  static int counter = 0;
+class Student5 {
+  private String name;
+  private int score ;
 
-  Student4(String n){
+  public Student5(String n){
     name = n;
-    counter++;
-    System.out.println(name + "さんをインスタンス化しました");
   }
 
-  static void display(){
-    System.out.println(counter + "人です");
+  public void setScore(int s){
+    if( 0 <= s && s<= 100){
+      score = s;
+    } else {
+      System.out.println(name + "さんの点数が範囲外です");
+      score = 0;
+    }
+  }
+
+  void display(){
+    System.out.println(name + "さん" + score + "点");
   }
 }
 
-class StuSample4 {
+class StuSample5 {
   public static void main(String[] args){
-    Student4.display();
+    Student5 stu1 = new Student5("田中");
+    stu1.setScore(80);
+    stu1.display();
 
-    Student4 stu1 = new Student4("田中");
-    Student4.display();
-    Student4 stu2 = new Student4("佐藤");
-    Student4.display();
+    Student5 stu2 = new Student5("佐藤");
+    stu2.setScore(-50);
+    stu2.display();
   }
 }
 
-//作ったインスタンスの個数を知るにはインスタンス内の変数では不可能
-//全インスタンスが共通して使える変数が必要→staticを指定する
-//オブジェクトを生成していなくても使える→クラス名.変数[メソッド]名と記述
+//アクセス修飾子(public,protected,private)でクラス・メンバ変数・メソッドの公開範囲を指定できる
+//メンバ変数は隠蔽(private)して、クラスとメソッドは公開(public)する設計方針をカプセル化と呼ぶ
+//代入前処理（代入する前に正しい値かをチェックする）、プログラムの修正範囲が狭くなるなどのメリットがある
