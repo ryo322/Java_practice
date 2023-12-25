@@ -1,13 +1,13 @@
-class Student2 {
+class Student3 {
   String name;
   int engScore;
   int mathScore;
 
-  void setData(String n){
+  Student3(String n){
     name = n;
   }
 
-  void setData(String n, int e, int m) { 
+  Student3(String n, int e, int m) { 
     name = n;
     engScore = e;
     mathScore = m;
@@ -24,18 +24,16 @@ class Student2 {
   }
 }
 
-class StuSample2 {
+class StuSample3 {
   public static void main(String[] args){
-    Student2 stu1 = new Student2();
-    Student2 stu2 = new Student2();
-     stu1.setData("田中");
+    Student3 stu1 = new Student3("田中");
+    Student3 stu2 = new Student3("佐藤", 75, 100);
      stu1.setScore(90, 80);
      stu1.display();
-
-     stu2.setData("佐藤", 75, 100);
      stu2.display();
   }
 }
 
-//クラス内に同じ名前で引数の型や数が違うメソッドを複数定義することをオーバーロードという
-//呼び出すメソッドは名前と引数の組み合わせで決めている
+//オブジェクトの初期化のために使われる特殊なメソッドをコンストラクタと呼ぶ
+//名前はクラス名と同じ、戻り値を持たない、new クラス名（コンストラクタへの因数）で定義
+//コンストラクタを定義していない場合は、自動でデフォルトコンストラクタ（引数・処理なし）が生成
