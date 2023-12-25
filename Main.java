@@ -1,39 +1,39 @@
-class Car2{
-  int no;
-  int speed ;
+class Car3{
+  private int no;
+  private int speed ;
 
-  Car2(){
+  public Car3(){
     no = 0;
   }
 
-  Car2(int n){
+  public Car3(int n){
    no = n;
   }
 
-  void run(int s){
+  public void run(int s){
     speed = s;
   }
   
-  void brake(){
+  public void brake(){
     speed = 0;
   }
 
-  void brake(int s){
+  public void brake(int s){
     speed = speed - s;
   }
 
-  void display(){
+  public void display(){
     System.out.println("ナンバー" + no + "の速度は" + speed + "です");
   }
 }
 
-class Drivecar2 {
+class Drivecar3 {
   public static void main(String[] args){
-    Car2 c1 = new Car2();
+    Car3 c1 = new Car3();
     c1.run(30);
     c1.display();
 
-    Car2 c2 = new Car2(2525);
+    Car3 c2 = new Car3(2525);
     c2.run(50);
     c2.display();
   }
