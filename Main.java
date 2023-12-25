@@ -1,32 +1,38 @@
-class Car {
-  int no;
-  int speed;
+class Student2 {
+  String name;
+  int engScore;
+  int mathScore;
 
-  void setNo(int n){
-    no = n;
+  void setData(String n){
+    name = n;
   }
 
-  void run(int s) { 
-    speed = s;
+  void setData(String n, int e, int m) { 
+    name = n;
+    engScore = e;
+    mathScore = m;
   }
 
-  void stop(){
-    speed = 0;
+  void setScore(int e, int m){
+    engScore = e;
+    mathScore = m;
   }
 
   void display(){
-    System.out.println("ナンバー" + no + "の速度は" + speed + "です");
+    System.out.println(name + "さん");
+    System.out.println("英語" + engScore + "点・数学" + mathScore + "点");
   }
 }
 
-class Drivecar {
+class StuSample2 {
   public static void main(String[] args){
-    Car c1 = new Car();
-     c1.setNo(2525);
-     c1.run(30);
-     c1.display();
+    Student2 stu1 = new Student2();
+    Student2 stu2 = new Student2();
+     stu1.setData("田中");
+     stu1.setScore(90, 80);
+     stu1.display();
 
-     c1.stop();
-     c1.display();
+     stu2.setData("佐藤", 75, 100);
+     stu2.display();
   }
 }
