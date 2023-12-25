@@ -1,9 +1,13 @@
-class Car1{
+class Car2{
   int no;
   int speed ;
 
-   void setNo(int n){
-    no = n;
+  Car2(){
+    no = 0;
+  }
+
+  Car2(int n){
+   no = n;
   }
 
   void run(int s){
@@ -23,14 +27,14 @@ class Car1{
   }
 }
 
-class Drivecar1 {
+class Drivecar2 {
   public static void main(String[] args){
-    Car1 c1 = new Car1();
-    c1.setNo(2525);
+    Car2 c1 = new Car2();
     c1.run(30);
     c1.display();
 
-    c1.brake(10);
-    c1.display();
+    Car2 c2 = new Car2(2525);
+    c2.run(50);
+    c2.display();
   }
 }
