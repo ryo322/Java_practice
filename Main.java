@@ -1,37 +1,36 @@
-class Student5 {
-  private String name;
-  private int score ;
+class Car1{
+  int no;
+  int speed ;
 
-  public Student5(String n){
-    name = n;
+   void setNo(int n){
+    no = n;
   }
 
-  public void setScore(int s){
-    if( 0 <= s && s<= 100){
-      score = s;
-    } else {
-      System.out.println(name + "さんの点数が範囲外です");
-      score = 0;
-    }
+  void run(int s){
+    speed = s;
+  }
+  
+  void brake(){
+    speed = 0;
+  }
+
+  void brake(int s){
+    speed = speed - s;
   }
 
   void display(){
-    System.out.println(name + "さん" + score + "点");
+    System.out.println("ナンバー" + no + "の速度は" + speed + "です");
   }
 }
 
-class StuSample5 {
+class Drivecar1 {
   public static void main(String[] args){
-    Student5 stu1 = new Student5("田中");
-    stu1.setScore(80);
-    stu1.display();
+    Car1 c1 = new Car1();
+    c1.setNo(2525);
+    c1.run(30);
+    c1.display();
 
-    Student5 stu2 = new Student5("佐藤");
-    stu2.setScore(-50);
-    stu2.display();
+    c1.brake(10);
+    c1.display();
   }
 }
-
-//アクセス修飾子(public,protected,private)でクラス・メンバ変数・メソッドの公開範囲を指定できる
-//メンバ変数は隠蔽(private)して、クラスとメソッドは公開(public)する設計方針をカプセル化と呼ぶ
-//代入前処理（代入する前に正しい値かをチェックする）、プログラムの修正範囲が狭くなるなどのメリットがある
