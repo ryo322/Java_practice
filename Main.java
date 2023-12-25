@@ -1,40 +1,33 @@
-class Car3{
+class Car4{
   private int no;
-  private int speed ;
+  private static int count = 0;
 
-  public Car3(){
+  public Car4(){
     no = 0;
+    count++;
+    System.out.println("ナンバーなしを作りました");
   }
 
-  public Car3(int n){
+  public Car4(int n){
    no = n;
+   count++;
+   System.out.println("ナンバー" + no + "を作りました");
   }
 
-  public void run(int s){
-    speed = s;
-  }
-  
-  public void brake(){
-    speed = 0;
-  }
-
-  public void brake(int s){
-    speed = speed - s;
-  }
-
-  public void display(){
-    System.out.println("ナンバー" + no + "の速度は" + speed + "です");
+  public static void display(){
+    System.out.println(count + "台作成済みです");
   }
 }
 
-class Drivecar3 {
+class Drivecar4 {
   public static void main(String[] args){
-    Car3 c1 = new Car3();
-    c1.run(30);
-    c1.display();
+    Car4 c1 = new Car4();
+    Car4.display();
 
-    Car3 c2 = new Car3(2525);
-    c2.run(50);
-    c2.display();
+    Car4 c2 = new Car4(2525);
+    Car4.display();
+
+    Car4 c3 = new Car4(8888);
+    Car4.display();
   }
 }
