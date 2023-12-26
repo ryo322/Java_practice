@@ -1,33 +1,40 @@
-class Car4{
-  private int no;
-  private static int count = 0;
+ class Person {
+  private String name;
 
-  public Car4(){
-    no = 0;
-    count++;
-    System.out.println("ナンバーなしを作りました");
+  public void setName(String n) {
+    name = n;
   }
 
-  public Car4(int n){
-   no = n;
-   count++;
-   System.out.println("ナンバー" + no + "を作りました");
-  }
-
-  public static void display(){
-    System.out.println(count + "台作成済みです");
+  public void display() {
+    System.out.println("名前" + name);
   }
 }
 
-class Drivecar4 {
+ class Student extends Person {
+  private int stuNo;
+
+  public void setStuNo(int s) {
+    stuNo = s;
+  }
+
+  public void displayStuNo() {
+    System.out.println("学籍番号" + stuNo);
+  }
+}
+
+class  Stusample {
   public static void main(String[] args){
-    Car4 c1 = new Car4();
-    Car4.display();
+    Student stu = new Student();
 
-    Car4 c2 = new Car4(2525);
-    Car4.display();
+    stu.setName("田中");
+    stu.display();
 
-    Car4 c3 = new Car4(8888);
-    Car4.display();
+    stu.setStuNo(1);
+    stu.displayStuNo();
   }
 }
+
+//継承とは、既存のクラスをもとに変数やメソッドを追加したクラスを作ること
+//継承関係にある親のクラスをスーパークラス、子のクラスをサブクラスという
+//継承を使うメリットはコーディング、メンテナンスが楽
+//継承できるクラスは１つだけであるのと、コンストラクタは継承しない
