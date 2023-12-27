@@ -1,46 +1,47 @@
- class Car1 {
-  private int no;
+ class Person {
+  private String name;
 
-  public Car1(int no) {
-    this.no = no;
+  public Person(String name) {
+    this.name = name;
   }
 
   public void display() {
-    System.out.println("ナンバーは" + no + "です");
+    System.out.println("名前：" + name);
   }
 }
 
- class Taxi1 extends Car1 {
-  private int price;
+ class Student extends Person {
+  private int stuNo;
 
-  public Taxi1(int no){
-    this(no, 0);
-  }
-
-  public Taxi1(int no, int price){
-    super(no);
-    this.price = price;
-  }
-
-  public void start() {
-    price = 420;
-  }
-
-  public void run(){
-    price = price + 80;
+  public Student(String name, int stuNo){
+    super(name);
+    this.stuNo = stuNo;
   }
 
   public void display() {
     super.display();
-    System.out.println("料金は" + price + "円");
+    System.out.println("学籍番号：" + stuNo);
+  }
+
+  public void chgStuNo(int stuNo) {
+    this.stuNo = stuNo;
   }
 }
 
-class Drive1 {
+class Stusample {
   public static void main(String[] args){
-    Taxi1 t1 = new Taxi1(2525);
-    t1.start();
-    t1.run();
-    t1.display();
+    Student stu1 = new Student("田中", 1);
+    Person psn = stu1;
+    psn.display();
+
+    if(psn instanceof Student){  //オブジェクトのクラスを特定するinstanceofキーワード。　対象オブジェクト　instanceof クラス名と記述
+      Student stu2 = (Student)psn;
+      stu2.chgStuNo(1001);
+      stu2.display();
+    }
   }
 }
+
+/*継承関係にあるクラス同士でオブジェクトの型変換が
+自動で行われる：スーパー＝サブの時
+キャストで明示する：サブ＝スーパーの時*/
