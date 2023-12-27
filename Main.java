@@ -11,59 +11,49 @@
   public abstract void practice();
 }
 
-class TandF extends Club {
-  public TandF(String name){
-    super(name);
+interface Englishable {
+  String LANGUAGE = "[英語]";
+  void displayEng();
+}
+
+class Baseball implements Englishable {
+  public void display(){
+    System.out.println("キャッチボール");
   }
 
-  public void practice(){
-    System.out.println("インターバル");
+  public void displayEng(){
+    System.out.println(Englishable.LANGUAGE);
+    System.out.println("catch ball");
   }
 }
 
-class Football extends Club {
-  public Football(String name){
-    super(name);
-  }
-
-  public void practice(){
-    System.out.println("ドリブル");
-  }
-}
-
- class Student {
+ class Student implements Englishable {
   private String name;
-  private Club club;
 
-  public Student(String name, Club club){
+  public Student(String name){
     this.name = name;
-    this.club = club;
   }
 
   public void display() {
     System.out.println("名前：" + name);
-    club.display();
   }
 
-  public void practice() {
-    club.practice();
+  public void displayEng() {
+    System.out.println(Englishable.LANGUAGE);
+    System.out.println("NAME:" + name);
   }
 }
 
 class Stusample {
   public static void main(String[] args){
-    TandF taf = new TandF("陸上競技部");
-    Football fb = new Football("サッカー部");
+    Student stu1 = new Student("Mike");
+    stu1.displayEng();
 
-    Student stu1 = new Student("田中", taf);
-    stu1.display();
-    stu1.practice();
-
-    Student stu2 = new Student("佐藤", fb);
-    stu2.display();
-    stu2.practice();
+    Baseball bb = new Baseball();
+    bb.displayEng();
     }
 }
 
-//実装内容を持たないメソッドを抽象メソッドと呼び、abstractをつける
-//抽象メソッドを持つクラスを抽象クラスと呼びabstractをつける。インスタンス化はできない
+//インターフェースは定数と抽象メソッドのみを定義できる
+//インターフェースを実装したクラスでは全てのメソッドの処理を定義する
+//インターフェースは複数実装できる
