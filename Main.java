@@ -1,47 +1,69 @@
- class Person {
+ abstract class Club {
   private String name;
 
-  public Person(String name) {
+  public Club(String name) {
     this.name = name;
   }
 
   public void display() {
-    System.out.println("名前：" + name);
+    System.out.println("部活動：" + name);
+  }
+  public abstract void practice();
+}
+
+class TandF extends Club {
+  public TandF(String name){
+    super(name);
+  }
+
+  public void practice(){
+    System.out.println("インターバル");
   }
 }
 
- class Student extends Person {
-  private int stuNo;
-
-  public Student(String name, int stuNo){
+class Football extends Club {
+  public Football(String name){
     super(name);
-    this.stuNo = stuNo;
+  }
+
+  public void practice(){
+    System.out.println("ドリブル");
+  }
+}
+
+ class Student {
+  private String name;
+  private Club club;
+
+  public Student(String name, Club club){
+    this.name = name;
+    this.club = club;
   }
 
   public void display() {
-    super.display();
-    System.out.println("学籍番号：" + stuNo);
+    System.out.println("名前：" + name);
+    club.display();
   }
 
-  public void chgStuNo(int stuNo) {
-    this.stuNo = stuNo;
+  public void practice() {
+    club.practice();
   }
 }
 
 class Stusample {
   public static void main(String[] args){
-    Student stu1 = new Student("田中", 1);
-    Person psn = stu1;
-    psn.display();
+    TandF taf = new TandF("陸上競技部");
+    Football fb = new Football("サッカー部");
 
-    if(psn instanceof Student){  //オブジェクトのクラスを特定するinstanceofキーワード。　対象オブジェクト　instanceof クラス名と記述
-      Student stu2 = (Student)psn;
-      stu2.chgStuNo(1001);
-      stu2.display();
+    Student stu1 = new Student("田中", taf);
+    stu1.display();
+    stu1.practice();
+
+    Student stu2 = new Student("佐藤", fb);
+    stu2.display();
+    stu2.practice();
     }
-  }
 }
 
-/*継承関係にあるクラス同士でオブジェクトの型変換が
-自動で行われる：スーパー＝サブの時
-キャストで明示する：サブ＝スーパーの時*/
+//実装内容を持たないメソッドを抽象メソッドと呼び、abstractをつける
+//抽象メソッドを持つクラスを抽象クラスと呼びabstractをつける。インスタンス化はできない
