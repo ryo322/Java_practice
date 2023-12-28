@@ -1,27 +1,36 @@
+import java.io.IOException;
+
+class WriteFile {
+  public void open() {
+    System.out.println("ファイルを開きます");
+  }
+
+  public void write() throws IOException{
+    throw new IOException();
+  }
+
+  public void close() {
+    System.out.println("ファイルを保存して閉じる");
+  }
+}
+
 class Divide1{
   public static void main(String[] args) {
+    WriteFile wf = new WriteFile();
     try {
-      int a = Integer.parseInt(args[0]);
-      int b = Integer.parseInt(args[1]);
-  
-
-      System.out.println("計算開始");
-      System.out.println("a / b =" + (a / b) + "あまり" + (a % b));
-      System.out.println("計算終了");
-    } catch(ArrayIndexOutOfBoundsException e) {
-      System.out.println("２つの数値を入力してください");
-      System.out.println("詳細：" + e.getMessage());
+      wf.open();
+      wf.write();
+    } catch(IOException e) {
+      System.out.println("IOExceptionが発生");
       e.printStackTrace();
     } catch(Exception e) {
       System.out.println("例外が発生しました");
-      System.out.println("詳細：" + e.getMessage());
       e.printStackTrace();
     } finally {
-      System.out.println("プログラムを終了します");
+      wf.close();
     }
   }
 }
 
-//例外発生時に自動生成される例外オブジェクトを受け取るためにtry-catchブロックを書く
-//catchブロックを複数書くときはサブクラスから書く
-//finallyブロックは省略可
+//throw 例外オブジェクト：例外を強制的に発生させる
+//throws 例外クラス：メソッドがその例外を発生することを宣言する
