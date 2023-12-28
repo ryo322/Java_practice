@@ -1,36 +1,20 @@
-import java.io.IOException;
-
-class WriteFile {
-  public void open() {
-    System.out.println("ファイルを開きます");
-  }
-
-  public void write() throws IOException{
-    throw new IOException();
-  }
-
-  public void close() {
-    System.out.println("ファイルを保存して閉じる");
-  }
-}
-
 class Divide1{
   public static void main(String[] args) {
-    WriteFile wf = new WriteFile();
     try {
-      wf.open();
-      wf.write();
-    } catch(IOException e) {
-      System.out.println("IOExceptionが発生");
-      e.printStackTrace();
+      System.out.println("処理開始");
+      int[] a = new int[3];
+      for(int i = 0; i < args.length; i++) {
+        a[i] = Integer.parseInt(args[i]);
+        System.out.println(a[i]);
+      }
+    } catch(NumberFormatException e) {
+      System.out.println("例外：NumberFormatException");
+    } catch(ArrayIndexOutOfBoundsException e) {
+      System.out.println("例外：ArrayIndexOutOfBoundsException");
     } catch(Exception e) {
-      System.out.println("例外が発生しました");
-      e.printStackTrace();
+      System.out.println("例外：Exception");
     } finally {
-      wf.close();
+      System.out.println("処理終了");
     }
   }
 }
-
-//throw 例外オブジェクト：例外を強制的に発生させる
-//throws 例外クラス：メソッドがその例外を発生することを宣言する
