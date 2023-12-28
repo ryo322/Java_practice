@@ -1,59 +1,14 @@
- abstract class Club {
-  private String name;
+class Divide1{
+  public static void main(String[] args) {
+    int a = Integer.parseInt(args[0]);
+    int b = Integer.parseInt(args[1]);
+  
 
-  public Club(String name) {
-    this.name = name;
-  }
-
-  public void display() {
-    System.out.println("部活動：" + name);
-  }
-  public abstract void practice();
-}
-
-interface Englishable {
-  String LANGUAGE = "[英語]";
-  void displayEng();
-}
-
-class Baseball implements Englishable {
-  public void display(){
-    System.out.println("キャッチボール");
-  }
-
-  public void displayEng(){
-    System.out.println(Englishable.LANGUAGE);
-    System.out.println("catch ball");
+    System.out.println("計算開始");
+    System.out.println("a / b =" + (a / b) + "あまり" + (a % b));
+    System.out.println("計算終了");
   }
 }
 
- class Student implements Englishable {
-  private String name;
-
-  public Student(String name){
-    this.name = name;
-  }
-
-  public void display() {
-    System.out.println("名前：" + name);
-  }
-
-  public void displayEng() {
-    System.out.println(Englishable.LANGUAGE);
-    System.out.println("NAME:" + name);
-  }
-}
-
-class Stusample {
-  public static void main(String[] args){
-    Student stu1 = new Student("Mike");
-    stu1.displayEng();
-
-    Baseball bb = new Baseball();
-    bb.displayEng();
-    }
-}
-
-//インターフェースは定数と抽象メソッドのみを定義できる
-//インターフェースを実装したクラスでは全てのメソッドの処理を定義する
-//インターフェースは複数実装できる
+//実行時に発生するエラーを例外という
+//例外が発生すると例外クラスのオブジェクトが自動生成される
