@@ -1,14 +1,27 @@
 class Divide1{
   public static void main(String[] args) {
-    int a = Integer.parseInt(args[0]);
-    int b = Integer.parseInt(args[1]);
+    try {
+      int a = Integer.parseInt(args[0]);
+      int b = Integer.parseInt(args[1]);
   
 
-    System.out.println("計算開始");
-    System.out.println("a / b =" + (a / b) + "あまり" + (a % b));
-    System.out.println("計算終了");
+      System.out.println("計算開始");
+      System.out.println("a / b =" + (a / b) + "あまり" + (a % b));
+      System.out.println("計算終了");
+    } catch(ArrayIndexOutOfBoundsException e) {
+      System.out.println("２つの数値を入力してください");
+      System.out.println("詳細：" + e.getMessage());
+      e.printStackTrace();
+    } catch(Exception e) {
+      System.out.println("例外が発生しました");
+      System.out.println("詳細：" + e.getMessage());
+      e.printStackTrace();
+    } finally {
+      System.out.println("プログラムを終了します");
+    }
   }
 }
 
-//実行時に発生するエラーを例外という
-//例外が発生すると例外クラスのオブジェクトが自動生成される
+//例外発生時に自動生成される例外オブジェクトを受け取るためにtry-catchブロックを書く
+//catchブロックを複数書くときはサブクラスから書く
+//finallyブロックは省略可
