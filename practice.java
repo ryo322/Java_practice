@@ -1,24 +1,19 @@
 class Main {
   public static void main(String[] args) {
-    // 「true」を用いて、「真」を表す真偽値を出力してください
-    System.out.println(true);
+    int month = 12;
+    int date = 31;
     
-    // 「false」を用いて、「偽」を表す真偽値を出力してください
-    System.out.println(false);
+    // 「12月31日」となるように変数と文字列を連結して出力してください
+    System.out.println(month + "月" + date + "日");
     
-    // 「==」を用いて、値を比較した結果を出力してください
-    System.out.println(12 / 4 == 3);
+    // 7を2で割った値を出力してください
+    System.out.println(7 / 2);
     
-    // 「!=」を用いて、値を比較した結果を出力してください
-    System.out.println(12 / 4 != 3);
+    // 7.0を2.0で割った値を出力してください
+    System.out.println(7.0 / 2.0);
     
-    // 変数を定義し、値を比較した結果を代入してください
-    boolean bool = 3 * 9 == 27;
-    
-    // 変数boolの値を出力してください
-    System.out.println(bool);
+    // 7を2.0で割った値を出力してください
+    System.out.println(7 / 2.0);
     
   }
 }
-
-  
